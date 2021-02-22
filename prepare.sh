@@ -26,7 +26,7 @@ if [ $? -eq 0 ]; then
         git config --global user.name "Leonardo Cardoso da Silva Bloise"
         git config --global user.email "leonardo.bloise@outlook.com"
         
-        if [ $? -eq 0]; then
+        if [ $? -eq 0 ]; then
             sudo apt update
             sudo apt install --no-install-recommends yarn
         else
