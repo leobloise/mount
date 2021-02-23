@@ -7,37 +7,28 @@ sudo apt install snapd
 
 if [ $? -eq 0 ]; then
 
-    echo "Installing base"
-
     sudo apt install curl
     sudo apt install wget
     sudo apt install zip
     sudo apt install unzip
     sudo apt-get install gdebi
+    sudo apt-get install git
 
     if [ $? -eq 0 ]; then
 
         sudo snap install --classic code
         sudo snap install node --classic --channel=14
         sudo apt install npm
+        sudo apt update
+        sudo apt install --no-install-recommends yarn
         curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
         echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
         sudo snap install --classic heroku
         git config --global user.name "Leonardo Cardoso da Silva Bloise"
         git config --global user.email "leonardo.bloise@outlook.com"
-        
-        if [ $? -eq 0 ]; then
-            sudo apt update
-            sudo apt install --no-install-recommends yarn
-        else
-            echo "CODE, NODE OR CURL WAS NOT INSTALLED";
-        fi
-
         sudo snap install discord
         sudo snap install slack --classic
         sudo apt install php
-
-        echo "Installing google chrome"
 
         wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
         sudo dpkg -i google-chrome-stable_current_amd64.deb
@@ -112,12 +103,15 @@ if [ $? -eq 0 ]; then
                     
                     echo "{
                         \"workbench.colorTheme\": \"Omni\",
-                        \"workbench.iconTheme': \"material-icon-theme\",
-                        \"editor.fontFamily': \"'JetBrains Mono', 'monospace', monospace, 'Droid Sans Fallback'\",
+                        \"workbench.iconTheme\": \"material-icon-theme\",
+                        \"editor.fontFamily\": \"'JetBrains Mono', 'monospace', monospace, 'Droid Sans Fallback'\",
                         \"editor.fontLigatures\": \"true\"
                     }" > $HOME/.config/Code/User/settings.json
 
                     echo "VS CODE SETUP COMPLETE"
+
+                    git clone https://github.com/leobloise/obscure-ocean-02223.git
+                    git clone https://github.com/leobloise/moveit.git
 
                 else
                     echo "There was an error while installing extensions in Visual Studio Code"
