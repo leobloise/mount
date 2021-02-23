@@ -43,32 +43,6 @@ if [ $? -eq 0 ]; then
 
         if [ $? -eq 0 ]; then
 
-           
-            
-
-            echo "
-                SNAPD
-                CURL
-                WGET
-                GDEBI
-                ZIP
-                UNZIP
-                NODE
-                NPM
-                YARN
-                VSCODE
-                DISCORD
-                SLACK
-                PHP
-                GOOGLE CHROME 
-                JetBrains Mono
-                HEROKU
-                Git configuration username and email
-                SUBLIME_TEXT
-                TELEGRAM
-
-                Installed              
-            "
 
             if [ $? -eq 0 ]; then
 
